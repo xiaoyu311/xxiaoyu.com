@@ -27,6 +27,7 @@
     "url": "https://github.com/xiaoyu311/xxiaoyu.com.git"
   },
   "dependencies": {
+    "async": "^2.6.1",
     "express": "^4.16.3"
   }
 }
