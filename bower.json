@@ -1,0 +1,19 @@
+
+{
+  "name": "xxiaoyu.com",
+  "version": "1.0.0",
+  "author": "xiaoyu",
+  "description": "xiaoyu个人博客",
+  "main": "",
+  "engines": {
+    "node": "8.10.11"
+  },
+  "contributors": [{
+    "name": "xiaoyu",
+    "email": "616872074@qq.com"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaoyu311/xxiaoyu.com.git"
+  }
+}
