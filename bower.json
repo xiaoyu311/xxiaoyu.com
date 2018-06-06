@@ -1,19 +1,29 @@
-
 {
   "name": "xxiaoyu.com",
-  "version": "1.0.0",
-  "author": "xiaoyu",
   "description": "xiaoyu个人博客",
-  "main": "",
-  "engines": {
-    "node": "8.10.11"
-  },
-  "contributors": [{
-    "name": "xiaoyu",
-    "email": "616872074@qq.com"
-  }],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xiaoyu311/xxiaoyu.com.git"
+  "main": "index.js",
+  "authors": [
+    "xiaoyu"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "node.js",
+    "express",
+    "jade",
+    "javascript"
+  ],
+  "homepage": "https://github.com/xiaoyu311/xxiaoyu.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
   }
 }
