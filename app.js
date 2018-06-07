@@ -3,6 +3,8 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import bodyParser from 'body-parser';
+import db from './models/db';
+import category from './models/category';
 import route from './routes';
 import i18n from './models/i18n';
 

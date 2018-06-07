@@ -8,6 +8,7 @@ html(lang="zh-CN")
     meta(name='keywords', content='#{keywords ? keywords : "blog, xiaoyu, node, node,js, javascript, jade, express, mongodb, mongoose"}')
     meta(name='description',content='#{description ? description : "xiaoyu"}')
     link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/libs/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css', rel='stylesheet')
     link(href='/stylesheets/site.css', rel='stylesheet')    
     title=title
   body.fuelux
@@ -23,16 +24,40 @@ html(lang="zh-CN")
               document.getElementById('home-loading').style.background = '#f3f3f3';
               document.getElementById('loading-con').style.display = 'block';
             }
-          img#loadingImg(alt='loading', src=settings.LogoPath, onload='imgLoad();')
-    .navbar.navbar-default.navbar-fixed-top
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='/')
-            img(src=settings.LogoPath)
-            =' '
-            span=settings.SiteName
+          img#loadingImg(alt="loading", src=settings.LogoPath, onload="imgLoad();")
+    nav#navbar-default.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container-fluid.container-fluid-default
+        a.navbar-brand.navbar-logo(href='/')
+          img(src=settings.LogoPath)
+          =' '
+          span=settings.SiteName
+        button.navbar-toggler(type="button")
+          span.navbar-toggler-icon
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav.my-nav-pills.navbar-right
+          li.active
+            a
+              span
+                i.fab.fa-blogger-b
+              | #{__("layout.blog")}
+          li.active
+            a
+              span
+                i.fas.fa-book-open
+              | #{__("layout.source")}
+          li.active
+            a
+              span
+                i.fas.fa-toolbox
+              | #{__("layout.tool")}
+          li.active
+            a
+              span
+                i.fas.fa-comment-dots
+              | #{__("layout.message")}
+          li.active
+            a
+              span
+                i.fas.fa-user
+              | #{__("layout.about")}
     block content

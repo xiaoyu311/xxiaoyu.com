@@ -41,6 +41,8 @@
     "express-session": "^1.15.6",
     "i18n": "^0.8.3",
     "jade": "^1.11.0",
+    "mongoose": "^5.1.4",
+    "mongoose-schema-extend": "^0.2.2",
     "nodemon": "^1.17.5"
   }
 }
