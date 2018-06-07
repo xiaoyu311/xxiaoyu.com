@@ -24,7 +24,9 @@ router.get('/', (req, res, next) => {
     }
     settings = result[0];
     res.render('blog/index', {
-      title: settings.SiteName
+      title: settings.SiteName,
+      settings,
+      isRoot: false
     });
   });
 });

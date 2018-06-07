@@ -8,7 +8,31 @@ html(lang="zh-CN")
     meta(name='keywords', content='#{keywords ? keywords : "blog, xiaoyu, node, node,js, javascript, jade, express, mongodb, mongoose"}')
     meta(name='description',content='#{description ? description : "xiaoyu"}')
     link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-    link(href="/stylesheets/common.css", rel="stylesheet")
+    link(href='/stylesheets/site.css', rel='stylesheet')    
     title=title
-  body
+  body.fuelux
+    if (isRoot)
+      link(href="/stylesheets/home-loading.css", rel="stylesheet")
+      #home-loading.home-loading
+        #loading-con.loading-con(style='display: none;')
+          .loading-circle
+          script.
+            var home_loading_cobegin = new Date();
+            document.body.style.overflow = 'hidden';
+            function imgLoad() {
+              document.getElementById('home-loading').style.background = '#f3f3f3';
+              document.getElementById('loading-con').style.display = 'block';
+            }
+          img#loadingImg(alt='loading', src=settings.LogoPath, onload='imgLoad();')
+    .navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/')
+            img(src=settings.LogoPath)
+            =' '
+            span=settings.SiteName
     block content

@@ -1,0 +1,59 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 微软雅黑;
+}
+
+button {
+  outline: medium;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+a {
+  color: #585f69;
+}
+a:hover, a:focus {
+  color: #19aa8d;
+  text-decoration: none;
+  outline: none;
+}
+.navbar-default {
+  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
+}
+.navbar .navbar-brand {
+  color: #2b2b2b;
+}
+.navbar-default .navbar-brand span:hover,
+.navbar-default .navbar-brand span:focus {
+  color: #19aa8d;
+}
+.navbar .navbar-brand img {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-top: -4px;
+  margin-right: 6px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+}
+.navbar-default .navbar-toggle {
+  margin-top: 18px;
+  background: #1ab394;
+  border-color: transparent;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #18a689;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background: #ffffff;
+}
