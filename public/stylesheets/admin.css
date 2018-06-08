@@ -1,0 +1,31 @@
+.navbar-default {
+  background-color: transparent;
+  border-color: #2f4050;
+}
+.nav-header {
+  padding: 33px 25px 20px;
+  background: url("/images/header-profile.png") no-repeat;
+}
+.nav-header a {
+  color: #DFE4ED;
+}
+.nav-header img.img-lg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+.nav-header img.img-sm {
+  width: 40px;
+  height: 40px;
+}
+.img-circle {
+  border-radius: 50%;
+}
+.logo-element {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  display: none;
+  padding: 18px 0;
+}

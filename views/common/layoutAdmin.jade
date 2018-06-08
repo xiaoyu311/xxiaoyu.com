@@ -1,0 +1,32 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title=title
+    link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/libs/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css', rel='stylesheet')
+    link(href='/libs/animate.css/animate.min.css', rel='stylesheet')
+    link(href='/stylesheets/admin.css', rel='stylesheet')
+  body.fuelux
+    #wrapper
+      nav.navbar-default.navbar-static-side
+        .sidebar-collapse
+          ul#side-menu.nav.metismenu
+            li.nav-header
+              .dropdown.profile-element
+                span
+                  a
+                    img.img-circle.img-lg(alt='image', src=settings.LogoPath)
+                a(href="")
+                  h4 #{__("layoutAdmin.title")}
+              .logo-element
+                img.img-circle.img-sm(alt='image', src=settings.LogoPath)
+            li
+              a(href="")
+                i.fab.fa-chrome
+                span.nav-label #{__("layoutAdmin.web_statistic")}
+            li
+              a(href="")
+                span.nav-label #{__("layoutAdmin.blog_management")}
