@@ -5,6 +5,7 @@ import session from 'express-session';
 import bodyParser from 'body-parser';
 import db from './models/db';
 import route from './routes';
+import admin from './routes/admin';
 import i18n from './models/i18n';
 
 var app = express();
@@ -24,6 +25,7 @@ app.use(i18n.init);
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', route);
+app.use('/admin', admin);
 
 const normalizePort = val => {
   var port = parseInt(val, 10);
