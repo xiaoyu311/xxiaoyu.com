@@ -2,13 +2,39 @@ import express from 'express';
 import formidable from 'formidable';
 import path from 'path';
 import fs from 'fs';
+import category from '../proxy/category';
 const router = express.Router();
 
-router.post('/action', (req, res, err) => {
-  console.log(req.url)
+// 保存分类数据
+router.post('/saveCategories', (req, res, next) => {
+  category.save(req.body, (err, msg) => {
+    if (err) {
+      console.log('创建分类: ', err);
+    } else {
+      res.send(msg);
+    }
+  });
+});
+
+// 获取所有分类数据
+router.get('/getCategory', (req, res, next) => {
+  category.getAll((err, CategoryList) => {
+    if (err) {
+      console.log('查询所有分类',err);
+    } else {
+      res.send({
+        status: true,
+        message: '查询所有分类成功',
+        data: CategoryList
+      });
+    }
+  });
+});
+
+// 上传图片
+router.post('/uploadimg', (req, res, err) => {
   let AVATAR_UPLOAD_FOLDER = '/public/images/';
   let domain = "http://localhost:3001";
-
   const form = new formidable.IncomingForm();
   form.encoding = 'utf-8';
   form.uploadDir = path.join(__dirname, '../public/images/'); //文件上传 临时文件存放路径

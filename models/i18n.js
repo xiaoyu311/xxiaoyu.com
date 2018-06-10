@@ -5,7 +5,7 @@ i18n.configure({
   locales: ['zh-CN', 'en-US'],
   cookie: 'locale',
   queryParameter: 'locale',
-  defaultLocale: 'zh-CN',
+  defaultLocale: 'en-US',
   objectNotation: true,
   syncFiles: false,
   directory: __dirname + '/../language' // 默认解析文件

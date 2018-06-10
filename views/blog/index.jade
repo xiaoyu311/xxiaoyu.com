@@ -2,10 +2,67 @@ extends ../common/layout.jade
 block content
   link(href='/stylesheets/selectlist.css', rel='stylesheet')
   link(href='/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css', rel='stylesheet')
-  .container-fluid.render-body
-    .row
-      .col-md-2.category-block.hidden-sm.hidden-xs
-        .category-top
-          | #{__("blog.index.category")}
-        .category-split
-        .category-list
+  script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
+  script(src="/javascripts/index.js")
+  div(style='flex-grow: 1;background: #f3f3f4;')
+    .container._container
+      ._index_row
+        .row
+          .col-md-2._col_md.col_padding
+            ._sidebar_container
+              ._side_title.border-bottom
+                a
+                  | 文章分类
+              ._sidebar
+                ul.navbar-nav
+                  li.nav-item.d-flex.justify-content-center.align-items-center._nav_item._nav_item_active
+                    a(href="#")
+                      img._alias_img(src="http://localhost:3000/images/%E5%85%A8%E9%83%A8%E5%88%86%E7%B1%BB.svg")
+                      span
+                        | All Category
+          .col-md-8.col_padding.offset-md-3(style="margin-top: 30px;")
+            ._main
+              header._main_header.border-bottom.d-flex.justify-content-between
+                section
+                  span._title_text
+                    | 日期
+                  span._title_title
+                    | 标题
+                section.d-flex.align-items-center
+                  .input-group._input_group
+                    .input-group-prepend
+                      button.btn.btn-outline-secondary.dropdown-toggle(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                        | 全文
+                      .dropdown-menu
+                        a.dropdown-item(href="#")
+                    input.form-control(type="text" aria-label="Text input with dropdown button")
+                    .input-group-prepend
+                      button.btn.btn-outline-secondary(type="button", style="border-top-right-radius: .25rem; border-bottom-right-radius: .25rem;")
+                        i.fas.fa-search
+                        span(style="margin-left: 5px;")
+                          | 全文
+              main._main-wrapper
+                ul.navbar-nav
+                  li.nav-item._content_item
+                    div
+                      section(style="margin-top: 30px;")
+                        h4(style="margin: 0;")
+                          a._main_title(href="#")
+                            | Node.js模板引擎的开发 
+                      section.d-flex.justify-content-between(style="margin-top: 15px;")
+                        div
+                          span._type._type_margin
+                            i.fa.fa-map-signs
+                            span._margin_right
+                              | 未分类
+                          span._type._type_margin
+                            i.fas.fa-clock
+                            span._margin_right
+                              | 2016-04-04
+                        div._alias
+                          i.fas.fa-globe
+                          a(href="#")
+                            | www.cnblogs.com
+                      section(style="margin-top: 15px;")
+                        span._content
+                          | 硬件性能和JavaScript语言本身的性能等是移动Web应用如此慢的原因。    

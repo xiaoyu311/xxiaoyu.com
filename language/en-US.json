@@ -42,7 +42,9 @@
 	"layout": {
 		"blog": "Blog",
 		"message": "Message",
-		"about": "About"
+		"about": "About",
+		"source": "layout.source",
+		"tool": "layout.tool"
 	},
 	"footer": {
 		"admin_system": "Admin System"
