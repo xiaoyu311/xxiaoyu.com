@@ -12,7 +12,7 @@ li {
 #_nabvar {
   height: 70px;
 }
-_container {
+._container {
   padding: 0;
 }
 
@@ -35,7 +35,36 @@ _container {
   border: 1px solid transparent;
   color: #666;
   text-align: center;
+  transition: all .3s;
+}
+._nav_link:hover {
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: all .3s;
 }
 ._margin {
   margin-left: 7px;
+}
+
+._navbar_container>.active:nth-child(1) a {
+  color: #f60;
+  border-bottom-color: #f60;
+}
+
+._navbar_container>.active:nth-child(2) a {
+  color: #d243ff;
+  border-bottom-color: #d243ff;
+}
+
+._navbar_container>.active:nth-child(3) a {
+  color: #c4c021;
+  border-bottom-color: #c4c021;
+}
+._navbar_container>.active:nth-child(4) a {
+  color: #01b7ee;
+  border-bottom-color: #01b7ee;
+}
+._navbar_container>.active:nth-child(5) a {
+  color: #33ce6b;
+  border-bottom-color: #33ce6b;
 }
