@@ -1,9 +1,8 @@
 $(function () {
   // sidebar
-  // $('#cate_type').children().eq(0).addClass('_nav_item_active').siblings().removeClass('_nav_item_active');
   // nav
+  
   $('.cate_item').on('click', function() {
-    // $(this).addClass('_nav_item_active').siblings().removeClass('_nav_item_active');
     var index = $(this).index();
     $("#_background").animate({
       top: (index -1) * 57 + 'px',

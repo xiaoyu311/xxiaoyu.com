@@ -3,7 +3,18 @@ import formidable from 'formidable';
 import path from 'path';
 import fs from 'fs';
 import category from '../proxy/category';
+import post from '../proxy/post';
 const router = express.Router();
+
+router.post('/saveArticle', (req, res, next) => {
+  post.save(req.body, (err, message) => {
+    if (err) return;
+    res.send({
+      status: true,
+      message
+    });
+  });
+});
 
 // 保存分类数据
 router.post('/saveCategories', (req, res, next) => {

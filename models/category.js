@@ -3,7 +3,7 @@ import shortid from 'shortid';
 const categorySchema = mongoose.Schema({
   _id: {
     type: String,
-    'default': shortid.generate
+    default: shortid.generate
   },
   //创建时间
   CreateTime: {
