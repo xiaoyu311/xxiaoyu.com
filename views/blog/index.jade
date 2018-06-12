@@ -69,6 +69,10 @@ block content
                         section(style="margin-top: 15px;")
                           span._content
                             | #{articleInfo.Summary}  
+    form#form                        
+      input(type='file', id='one')
+      input(type='button',value='button', id='button')
+    div#result
   .mask
   .mask_content
   script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
