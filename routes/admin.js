@@ -29,7 +29,7 @@ router.post('/saveCategories', (req, res, next) => {
 
 // 获取所有分类数据
 router.get('/getCategory', (req, res, next) => {
-  category.getAll((err, CategoryList) => {
+  category.getAll('Alias', 'all', (err, CategoryList) => {
     if (err) {
       console.log('查询所有分类',err);
     } else {

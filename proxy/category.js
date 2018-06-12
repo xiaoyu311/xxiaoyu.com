@@ -1,9 +1,17 @@
 import CategoryModel from '../models/category';
+import async from 'async';
 
 class Category {
-  // 查看分类
-  getAll(callback) {
-    CategoryModel.find({}, (err, CategoryList) => {
+
+  // 按照别名 或者名字 查看分类
+  getAll(attr, value, callback) {
+    var findObj = {};
+    if (!(attr === 'Alias' && value === 'all')) {
+      findObj = {
+        [attr]: value
+      };
+    }
+    CategoryModel.find(findObj, (err, CategoryList) => {
       if (err) {
         console.log('查看分类失败', err);
         callback(err);
@@ -12,26 +20,52 @@ class Category {
       }
     })
   }
-  
+
   // 保存分类
   save(params, callback) {
-    const { _id, CateName, Alias, Link, Img } = params;
+    const {
+      _id,
+      CateName,
+      Alias,
+      Link,
+      Img
+    } = params;
     if (_id) {
 
     } else {
-      const newCategory = { CateName, Alias, Link, Img };
-      CategoryModel.create({
-        CreateTime: new Date,
-        ModifyTime: new Date,
-        ...newCategory
-      }, err => {
+      async.parallel([
+        fn => {
+          this.getAll('CateName', CateName, fn);
+        },
+        fn => {
+          this.getAll('Alias', Alias, fn);
+        }
+      ], (err, result) => {
         if (err) {
+          console.log('新建分类出错')
           callback(err);
         } else {
-          callback(null, {
-            status: true,
-            message: '创建分类成功'
-          });
+          if (result[0].length || result[1].length) {
+            callback(null, {
+              status: true,
+              message: '名字或者别名已存在'
+            });
+          } else {
+            CategoryModel.create({
+              CreateTime: new Date,
+              ModifyTime: new Date,
+              ...newCategory
+            }, err => {
+              if (err) {
+                callback(err);
+              } else {
+                callback(null, {
+                  status: true,
+                  message: '创建分类成功'
+                });
+              }
+            });
+          }
         }
       });
     }

@@ -46,25 +46,25 @@ li {
   margin-left: 7px;
 }
 
-._navbar_container>.active:nth-child(1) a {
+._navbar_container>.blog>a {
   color: #f60;
   border-bottom-color: #f60;
 }
 
-._navbar_container>.active:nth-child(2) a {
+._navbar_container>.source>a {
   color: #d243ff;
   border-bottom-color: #d243ff;
 }
 
-._navbar_container>.active:nth-child(3) a {
+._navbar_container>.tool>a {
   color: #c4c021;
   border-bottom-color: #c4c021;
 }
-._navbar_container>.active:nth-child(4) a {
+._navbar_container>.message>a {
   color: #01b7ee;
   border-bottom-color: #01b7ee;
 }
-._navbar_container>.active:nth-child(5) a {
+._navbar_container>.about>a {
   color: #33ce6b;
   border-bottom-color: #33ce6b;
 }

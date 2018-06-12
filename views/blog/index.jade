@@ -16,10 +16,9 @@ block content
                   | 文章分类
               ._sidebar
                 ul#cate_type.navbar-nav
-                  li#_background
                   each cate in cateData
-                    li.cate_item.nav-item.d-flex.align-items-center._nav_item(style="z-index: 1;")
-                      a(href="#")
+                    li.cate_item.nav-item.d-flex.align-items-center._nav_item(class='#{currentCate === cate.Alias ? "_nav_item_active" : ""}')
+                      a(href='#{currentCate === cate.Alias ? "javascript:;" : cate.Alias}')
                         img._alias_img(src="http://localhost:3000/images/%E5%85%A8%E9%83%A8%E5%88%86%E7%B1%BB.svg")
                         span._alias_text
                           | #{cate.CateName}
@@ -43,32 +42,33 @@ block content
                       button.btn.btn-outline-secondary(type="button", style="border-top-right-radius: .25rem; border-bottom-right-radius: .25rem;")
                         i.fas.fa-search
                         span(style="margin-left: 5px;")
-                          | 全文
+                          | 搜索
               main._main-wrapper
                 ul.navbar-nav
-                  li.nav-item._content_item
-                    div
-                      section(style="margin-top: 30px;")
-                        h4(style="margin: 0;")
-                          a._main_title(href="#")
-                            | Node.js模板引擎的开发 
-                      section.d-flex.justify-content-between(style="margin-top: 15px;")
-                        div
-                          span._type._type_margin
-                            i.fa.fa-map-signs
-                            span._margin_right
-                              | 未分类
-                          span._type._type_margin
-                            i.fas.fa-clock
-                            span._margin_right
-                              | 2016-04-04
-                        div._alias
-                          i.fas.fa-globe
-                          a(href="#")
-                            | www.cnblogs.com
-                      section(style="margin-top: 15px;")
-                        span._content
-                          | 硬件性能和JavaScript语言本身的性能等是移动Web应用如此慢的原因。    
+                  each articleInfo in articleList
+                    li.nav-item._content_item
+                      div
+                        section(style="margin-top: 30px;")
+                          h4(style="margin: 0;")
+                            a._main_title(href="#")
+                              | #{articleInfo.Title}
+                        section.d-flex.justify-content-between(style="margin-top: 15px;")
+                          div
+                            span._type._type_margin
+                              i.fa.fa-map-signs
+                              span._margin_right
+                                | #{articleInfo.CateName}
+                            span._type._type_margin
+                              i.fas.fa-clock
+                              span._margin_right
+                                | 2016-04-04
+                          div._alias(style="#{articleInfo.Url ? 'display: block' : 'display: none'}")
+                            i.fas.fa-globe
+                            a(href="#{articleInfo.Url}")
+                              | #{articleInfo.Url}
+                        section(style="margin-top: 15px;")
+                          span._content
+                            | #{articleInfo.Summary}  
   .mask
   .mask_content
   script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')

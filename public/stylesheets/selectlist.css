@@ -1,9 +1,11 @@
 ._index_row>.row {
   margin: 0;
 }
+
 ._github:hover {
   cursor: pointer;
 }
+
 ._github {
   position: fixed;
   top: 71px;
@@ -60,37 +62,35 @@
   width: 100%;
   display: inline-block;
 }
-
-._nav_item:hover a,
-._nav_item:focus a {
+.cate_item:hover a {
+  text-decoration: none;
+}
+.cate_item:hover a span{
   text-decoration: none;
   color: #eb7350;
+  transition: all .3s;
 }
+
 #cate_type {
   position: relative;
 }
+
 ._nav_item_active {
   text-decoration: none;
-  color: #eb7350;
-}
-#_background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 57px;
-  background: rgba(25, 170, 141, .3);
-  /* transform: translateY(0); */
+  background-color: #fff5ee;
+  border-top: 1px solid #f8d4bc;
+  border-bottom: 1px solid #f8d4bc;
+  color: #f60;
 }
 
 ._nav_item_active>a>span {
   color: #eb7350;
 }
 
-._nav_item:hover a span,
+/* ._nav_item:hover a span,
 ._nav_item:focus a span {
   color: #eb7350;
-}
+} */
 
 ._alias_img {
   width: 25px;
@@ -111,8 +111,21 @@
   padding-bottom: 20px;
   border-bottom: 1px dashed #f8d4bc;
 }
-._content_item:hover{
+
+._content_item:hover {
   cursor: pointer;
+}
+
+._content_item a:hover {
+  color: #19aa8d;
+  text-decoration: none;
+}
+._content_item ._alias:hover {
+  color: #19aa8d;
+}
+._content_item ._alias:hover a {
+  color: #19aa8d;
+  text-decoration: none;
 }
 
 ._title_text {
@@ -177,6 +190,7 @@
   font-size: 14px;
   color: #777;
 }
+
 .mask {
   display: none;
   position: fixed;
@@ -185,8 +199,9 @@
   z-index: 10000;
   height: 100%;
   width: 100%;
-  background: rgba(0,0, 0, .6)
+  background: rgba(0, 0, 0, .6)
 }
+
 .mask_content {
   position: fixed;
   top: 0;
@@ -198,6 +213,7 @@
   transform: translateX(100%);
   transition: all .3s;
 }
+
 .mask_content_show {
   transform: translateX(0);
   transition: all .3s;

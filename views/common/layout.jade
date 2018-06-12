@@ -37,8 +37,8 @@ html(lang="zh-CN")
             section
               div
                 ul.navbar-nav.d-flex.flex-row._navbar_container
-                  li.nav-item
-                    a._nav_link(href="#")
+                  li.nav-item(class='#{query}')
+                    a._nav_link(href="#{query === 'blog' ? 'javascript:;' : '/blog'}")
                       span
                         i.fab.fa-blogger-b
                           span._margin
