@@ -64,7 +64,7 @@ block content
                                 | 2016-04-04
                           div._alias(style="#{articleInfo.Url ? 'display: block' : 'display: none'}")
                             i.fas.fa-globe
-                            a(href="#{articleInfo.Url}")
+                            a#target_url(href="#{articleInfo.Url}")
                               | #{articleInfo.Url}
                         section(style="margin-top: 15px;")
                           span._content
