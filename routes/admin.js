@@ -44,8 +44,8 @@ router.get('/getCategory', (req, res, next) => {
 
 // 上传图片
 router.post('/uploadimg', (req, res, err) => {
-  // console.log(req.body);
-  // console.log(req.query)
+  // console.log(req.body.basefile)
+  // console.log(req.body)
   // let AVATAR_UPLOAD_FOLDER = '/public/images/';
   // let domain = "http://localhost:3001";
   const form = new formidable.IncomingForm();
@@ -54,11 +54,13 @@ router.post('/uploadimg', (req, res, err) => {
   // form.keepExtensions = true;
   // form.maxFieldsSize = 3 * 1024 * 1024;
   form.parse(req, (err, fields, files) => {
-    const imgData = fields.imgData.replace(/^data:image\/\w+;base64,/, '');
-    console.log(imgData)
+    // console.log(fields)
+    // console.log(files)
+    const imgData = fields.img.replace(/^data:image\/\w+;base64,/, '');
+    // console.log(imgData)
   
     const dataBuffer = new Buffer(imgData, 'base64');
-    fs.writeFile('img.jpg', dataBuffer, function (err) {
+    fs.writeFile('./public/images/img.jpg', dataBuffer, function (err) {
       if (err) {
         res.send(err);
       } else {
