@@ -18,9 +18,9 @@ $(function () {
     fileReader.readAsDataURL(document.getElementById('file').files[0]);
     fileReader.onload = function() {
       document.getElementById('show').src = this.result
-      formData.append('img', this.result)
+      formData.append('Img', this.result)
       var xhr = new XMLHttpRequest();
-      xhr.open('post', '/admin/uploadimg', true);
+      xhr.open('post', '/admin/saveCategories', true);
       xhr.send(formData)
     }
   })
