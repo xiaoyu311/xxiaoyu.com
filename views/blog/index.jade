@@ -76,15 +76,25 @@ block content
                   | 后台管理
   .mask
   .mask_content
-    .loadEffect
-      div
-        span
-      div
-        span
-      div
-        span
-      div
-        span
+    header.header_title.border-bottom
+      h4 
+    main
+      .my_load
+        div
+          .first
+          .second
+          .third
+    footer.footer_content.d-flex.border-top.justify-content-between
+      .labels
+      .btn_wrapper
+        button.btn.btn-danger(type="button", style="margin-right: 20px")
+          i.fas.fa-power-off
+          span(style="margin-left: 5px")
+            | 关闭
+        button.btn.btn-success(type="button")
+          i.fas.fa-desktop
+          span(style="margin-left: 5px")
+            | 完整模式
   script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
   script(type='text/javascript',src="/javascripts/index.js")
   script(type='text/javascript',src="/javascripts/nav.js")

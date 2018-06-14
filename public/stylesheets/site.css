@@ -68,3 +68,41 @@ li {
   color: #33ce6b;
   border-bottom-color: #33ce6b;
 }
+
+
+.my_load {
+  height: 20px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.my_load>div>div{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: green;
+}
+@keyframes firstLoad {
+  0% {
+    transform: scale(1)
+  }
+  70% {
+    transform: scale(.1)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+.my_load .first {
+  animation: firstLoad 1.2s infinite linear .2s;
+}
+.my_load .second {
+  margin-left: 5px;
+  animation: firstLoad 1.2s infinite linear .4s;
+}
+.my_load .third {
+  margin-left: 5px;
+  animation: firstLoad 1.2s infinite linear .6s;
+}
