@@ -22,6 +22,7 @@ class Post {
                 fn(err);
                 return;
               }
+              console.log(postInfo._id)
               const postInfoNew = {
                 _id: postInfo._id,
                 CreateTime: postInfo.CreateTime,
@@ -119,12 +120,24 @@ class Post {
           callback(err);
         } else {
           callback(null, '文章创建成功');
-
         }
       });
     } else {
-
     }
+  }
+
+  // 查询文章详情
+  detail(params, callback) {
+    postModel.findOne({
+      _id: params._id
+    }, (err, postInfo) => {
+      if (err) {
+        console.log('查询文章详情出错：', err);
+        callback(err);
+        return;
+      }
+      callback(null, postInfo);
+    });
   }
 }
 

@@ -6,7 +6,7 @@ block content
     ._github
       a(href="https://github.com/xiaoyu311")
         img(src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67", alt="github")
-    .container._container
+    ._container
       ._index_row
         .row
           .col-md-2._col_md.col_padding
@@ -22,7 +22,7 @@ block content
                         img._alias_img(src=cate.Img)
                         span._alias_text
                           | #{cate.CateName}
-          .col-md-8.col_padding.offset-md-3(style="margin-top: 30px;")
+          .col-md-8.col_padding.offset-md-3._me_main
             ._main
               header._main_header.border-bottom.d-flex.justify-content-between
                 section
@@ -46,13 +46,13 @@ block content
               main._main-wrapper
                 ul.navbar-nav
                   each articleInfo in articleList
-                    li.nav-item._content_item
+                    li.nav-item._content_item(_id=articleInfo._id, title=articleInfo.Title, Labels=articleInfo.Labels)
                       div
-                        section(style="margin-top: 30px;")
+                        section(style="margin-top: 15px;")
                           h4(style="margin: 0;")
                             a._main_title(href="#")
                               | #{articleInfo.Title}
-                        section.d-flex.justify-content-between(style="margin-top: 15px;")
+                        section.d-flex.justify-content-between(style="margin-top: 10px;")
                           div
                             span._type._type_margin
                               i.fa.fa-map-signs
@@ -66,11 +66,25 @@ block content
                             i.fas.fa-globe
                             a#target_url(href="#{articleInfo.Url}")
                               | #{articleInfo.Url}
-                        section(style="margin-top: 15px;")
+                        section(style="margin-top: 10px;")
                           span._content
                             | #{articleInfo.Summary}  
+            footer.footer
+              p
+                | 2018 © All Rights Reserved | #{settings.RecordNo} | 
+                a(href="#")                  
+                  | 后台管理
   .mask
   .mask_content
+    .loadEffect
+      div
+        span
+      div
+        span
+      div
+        span
+      div
+        span
   script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
   script(type='text/javascript',src="/javascripts/index.js")
   script(type='text/javascript',src="/javascripts/nav.js")

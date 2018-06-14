@@ -70,4 +70,22 @@ router.get('/blog/:category', (req, res, next) => {
   });
 });
 
+// 获取当前页面的详细内容
+router.get('/blog/:category/:_id', (req, res, next) => {
+  post.detail(req.params, (err, data) => {
+    if (err) {
+      res.send({
+        status: false,
+        message: '查询出错'
+      });
+      return;
+    }
+    res.send({
+      status: true,
+      message: '查询成功',
+      data
+    })
+  });
+}); 
+
 export default router;

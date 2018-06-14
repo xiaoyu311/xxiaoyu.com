@@ -3,6 +3,7 @@ import category from '../proxy/category';
 import post from '../proxy/post';
 const router = express.Router();
 
+// 文章保存
 router.post('/saveArticle', (req, res, next) => {
   post.save(req.body, (err, message) => {
     if (err) return;
