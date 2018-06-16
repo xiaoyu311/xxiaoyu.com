@@ -1,9 +1,40 @@
 extends ../common/layout.jade
 block content
   link(rel="stylesheet", href="/stylesheets/about.css")
-  .content(style='flex-grow: 1;background: #f3f3f4;position: relative;')
+  .content(style='display: flex; flex-direction: column;flex-grow: 1;background: #eee;position: relative;')
     main#information
-      .blog_img
-        img(src="/images/blog.jpeg", alt="blog")
+      section.show_me
+        .blog_img
+          img(src="/images/blog.jpeg", alt="blog")
+        ul
+          li
+            span.span_first
+              | 职位: 前端开发工程师
+          li.second_li
+            .skew_wrap_second
+              .skew_second
+                span.span_second
+                  | 现任于朗恒安生物科技
+          li.third_li
+            .skew_wrap_third
+              .skew_third
+                span.span_third
+                  | 负责公众号内微信支付
+          li.forth_li
+            .skew_wrap_forth
+              .skew_forth
+                span.span_forth
+                  | 公司官网维护
+          li.fifth_li
+            .skew_wrap_fifth
+              .skew_fifth
+                span.span_fifth
+                  | App android方面的开发
+          li.sixth_li
+            span.span_first.span_sixth
+              | 对接后台php
+      section.content_me(style="margin-top: 30px;")
+        div#mark_dowm
   script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
+  script(type='text/javascript', src='/libs/marked/marked.min.js', charset='utf-8')
   script(src="/javascripts/about.js")

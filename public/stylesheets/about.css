@@ -1,16 +1,154 @@
+#information {
+  flex-grow: 1;
+  display: flex;
+}
 
-#information>.blog_img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#information .blog_img {
+  margin: 30px 0 30px 150px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   border: 6px solid #fff;
 }
-#information>.blog_img>img {
+
+#information .blog_img>img {
   display: inline-block;
   width: 100%;
   border-radius: 50%;
+}
+
+.show_me ul {
+  margin: 0;
+  padding: 0;
+  margin-left: 30px;
+}
+
+.second_li {
+  transform: skewX(20deg);
+}
+
+.skew_wrap_second {
+  transform: translateX(14px);
+}
+
+.skew_second {
+  transform: translateY(-11px);
+}
+
+.third_li {
+  transform: skewX(-20deg);
+}
+
+.skew_wrap_third {
+  transform: translateX(-2px);
+}
+
+.skew_third {
+  transform: translateY(-33px);
+}
+
+.forth_li {
+  transform: skewX(20deg);
+}
+
+.skew_wrap_forth {
+  transform: translateX(30px);
+}
+
+.skew_forth {
+  transform: translateY(-50.5px);
+}
+
+.fifth_li {
+  transform: skewX(-10deg);
+}
+
+.skew_wrap_fifth {
+  transform: translateX(7px);
+}
+
+.skew_fifth {
+  transform: translateY(-63.7px);
+}
+
+.sixth_li {
+  transform: rotateX(27deg);
+}
+
+.show_me ul li span {
+  display: inline-block;
+  width: 380px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 1px solid rgba(0, 0, 0, 0.13);
+  border-right: 1px solid rgba(0, 0, 0, 0.13);
+  box-shadow: -13px 13px 32px -15px;
+  /* border-radius: 10px; */
+  /* animation: myRotate 2s forwards; */
+}
+
+.show_me ul li .span_first {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  background: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.show_me ul li .span_second {
+  transform: rotateX(316.886deg);
+  background-color: rgb(227, 227, 227);
+}
+
+.show_me ul li .span_third {
+  transform: rotateX(43.1136deg);
+  background-color: rgb(227, 227, 227);
+}
+
+.show_me ul li .span_forth {
+  transform: rotateX(32.8599deg);
+  background-color: rgb(227, 227, 227);
+}
+
+.show_me ul li .span_fifth {
+  transform: rotateX(32.8599deg);
+  background-color: rgb(227, 227, 227);
+}
+
+.show_me ul li .span_sixth {
+  transform: translate(13px, -84px);
+}
+
+.content_me {
+  margin: 0 auto;
+}
+
+#xiaoyu- {
+  border-left: 7px solid #39c;
+  color: #222;
+  font-family: "Microsoft Yahei";
+  font-size: 28px;
+  text-indent: 20px;
+  padding: 10px 0;
+}
+#skill,
+#hobby,
+#blog {
+  font-size: 24px;
+  margin-left: 20px;
+}
+#skill:before,
+#blog:before,
+#hobby:before {
+  color: #39c;
+  content: "■";
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+#mark_dowm li {
+  font-size: 16px;
+  color: #666;
 }
