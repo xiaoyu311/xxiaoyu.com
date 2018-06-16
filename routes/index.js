@@ -88,4 +88,11 @@ router.get('/blog/:category/:_id', (req, res, next) => {
   });
 }); 
 
+// 关于页面
+router.get('/about', (req, res, next) => {
+  res.render('blog/about', {
+    query: 'about'
+  });
+})
+
 export default router;

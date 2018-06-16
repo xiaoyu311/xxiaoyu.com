@@ -30,10 +30,6 @@
   background: #fff;
 }
 
-._container {
-  padding: 0 30px;
-}
-
 ._side_title {
   background: #fff;
 }
@@ -448,4 +444,15 @@
 
 .loadEffect div:nth-child(4) {
   -webkit-animation-delay: 0.8s;
+}
+
+.dropdown-menu {
+  padding: 0;
+  min-width: 0;
+}
+.dropdown-menu>a {
+  padding: .2rem 1.2rem;
+}
+.dropdown-menu>a:first-child {
+  margin-top: .5rem;
 }

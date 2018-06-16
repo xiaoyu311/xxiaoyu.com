@@ -1,11 +1,10 @@
 extends ../common/layout.jade
 block content
   link(href='/stylesheets/selectlist.css', rel='stylesheet')
-  link(href='/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css', rel='stylesheet')
   div(style='flex-grow: 1;background: #f3f3f4;')
     ._github
       a(href="https://github.com/xiaoyu311")
-        img(src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67", alt="github")
+        img(src="/images/github.png", alt="github")
     ._container
       ._index_row
         .row
@@ -19,7 +18,7 @@ block content
                   each cate in cateData
                     li.cate_item.nav-item.d-flex.align-items-center._nav_item(class='#{currentCate === cate.Alias ? "_nav_item_active" : ""}')
                       a(href='#{currentCate === cate.Alias ? "javascript:;" : cate.Alias}')
-                        img._alias_img(src=cate.Img)
+                        img._alias_img(src=cate.Img, alt="icon")
                         span._alias_text
                           | #{cate.CateName}
           .col-md-8.col_padding.offset-md-3._me_main
@@ -37,6 +36,15 @@ block content
                         | 全文
                       .dropdown-menu
                         a.dropdown-item(href="#")
+                          | 全文
+                        a.dropdown-item(href="#")
+                          | 日期
+                        a.dropdown-item(href="#")
+                          | 标题
+                        a.dropdown-item(href="#")
+                          | 标签
+                        a.dropdown-item(href="#")
+                          | 分类
                     input.form-control(type="text" aria-label="Text input with dropdown button")
                     .input-group-prepend
                       button.btn.btn-outline-secondary(type="button", style="border-top-right-radius: .25rem; border-bottom-right-radius: .25rem;")
@@ -64,7 +72,7 @@ block content
                                 | 2016-04-04
                           div._alias(style="#{articleInfo.Url ? 'display: block' : 'display: none'}")
                             i.fas.fa-globe
-                            a#target_url(href="#{articleInfo.Url}")
+                            a.target_url(href="#{articleInfo.Url}")
                               | #{articleInfo.Url}
                         section(style="margin-top: 10px;")
                           span._content

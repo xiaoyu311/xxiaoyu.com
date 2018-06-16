@@ -30,14 +30,14 @@ html(lang="zh-CN")
         ._container
           nav#_nabvar.navber.d-flex.justify-content-between.align-items-center
             section.align-items-center
-              a.navbar-brand(href="#")
-                img._logo(src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg", alt="")
+              a.navbar-brand(href="#{query !== 'about' ? '/about' : 'javascript:;'}")
+                img._logo(src="/images/blog.jpeg", alt="")
                 span._title
                   | xiaoyu
             section
               div
                 ul.navbar-nav.d-flex.flex-row._navbar_container
-                  li.nav-item(class='#{query}')
+                  li.nav-item(class='#{query === "blog" ? query : ""}')
                     a._nav_link(href="#{query === 'blog' ? 'javascript:;' : '/blog'}")
                       span
                         i.fas.fa-box-open
@@ -61,8 +61,8 @@ html(lang="zh-CN")
                         i.fas.fa-comment-dots
                           span._margin
                             | #{__("layout.message")}
-                  li.nav-item
-                    a._nav_link(href="#")
+                  li.nav-item(class='#{query === "about" ? query : ""}')
+                    a._nav_link(href="#{query === 'about' ? 'javascript:;' : '/about'}")
                       span
                         i.fas.fa-user
                           span._margin

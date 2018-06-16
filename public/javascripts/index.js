@@ -55,4 +55,9 @@ $(function () {
     element = '';
     $('.label_item').remove();
   }
+
+  $('.dropdown-toggle').on('click', function() {
+    $(this).parent().toggleClass('show');
+    $(this).parent().children('.dropdown-menu').toggleClass('show');
+  });
 });

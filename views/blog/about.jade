@@ -1,0 +1,9 @@
+extends ../common/layout.jade
+block content
+  link(rel="stylesheet", href="/stylesheets/about.css")
+  .content(style='flex-grow: 1;background: #f3f3f4;position: relative;')
+    main#information
+      .blog_img
+        img(src="/images/blog.jpeg", alt="blog")
+  script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
+  script(src="/javascripts/about.js")
