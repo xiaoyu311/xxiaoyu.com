@@ -60,4 +60,12 @@ $(function () {
     $(this).parent().toggleClass('show');
     $(this).parent().children('.dropdown-menu').toggleClass('show');
   });
+
+  $('.dropdown-item').on('click', function() {
+    var text = $(this).attr('data-set');
+    $('.dropdown-toggle').parent().removeClass('show');
+    $('.dropdown-toggle').parent().children('.dropdown-menu').removeClass('show');
+    $('.dropdown-toggle').text(text);
+    $('._title_text').text(text);
+  })
 });

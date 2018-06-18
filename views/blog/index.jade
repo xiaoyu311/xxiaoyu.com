@@ -26,7 +26,7 @@ block content
               header._main_header.border-bottom.d-flex.justify-content-between
                 section
                   span._title_text
-                    | 日期
+                    | 全文
                   span._title_title
                     | 标题
                 section.d-flex.align-items-center
@@ -35,15 +35,15 @@ block content
                       button.btn.btn-outline-secondary.dropdown-toggle(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
                         | 全文
                       .dropdown-menu
-                        a.dropdown-item(href="#")
+                        a.dropdown-item(href="javascript:;", data-set="全文")
                           | 全文
-                        a.dropdown-item(href="#")
+                        a.dropdown-item(href="javascript:;", data-set="日期")
                           | 日期
-                        a.dropdown-item(href="#")
+                        a.dropdown-item(href="javascript:;", data-set="标题")
                           | 标题
-                        a.dropdown-item(href="#")
+                        a.dropdown-item(href="javascript:;", data-set="标签")
                           | 标签
-                        a.dropdown-item(href="#")
+                        a.dropdown-item(href="javascript:;", data-set="分类")
                           | 分类
                     input.form-control(type="text" aria-label="Text input with dropdown button")
                     .input-group-prepend
