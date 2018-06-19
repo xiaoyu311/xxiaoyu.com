@@ -10,7 +10,7 @@ class Post {
         if (err) {
           console.log('查询所有文章出错');
           callback(err);
-          return
+          return;
         }
         async.map(postList,
           (postInfo, fn) => {
@@ -22,7 +22,6 @@ class Post {
                 fn(err);
                 return;
               }
-              console.log(postInfo._id)
               const postInfoNew = {
                 _id: postInfo._id,
                 CreateTime: postInfo.CreateTime,
@@ -49,7 +48,6 @@ class Post {
       });
       return;
     }
-    // console.log(Alias)
     CategoryModel.findOne({
       Alias
     }, (err, categoryInfo) => {

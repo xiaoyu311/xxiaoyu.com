@@ -65,7 +65,6 @@ router.get('/blog/:category', (req, res, next) => {
       cateData: categories,
       query: 'blog',
       currentCate: req.params.category,
-      isRoot: false
     });
   });
 });
