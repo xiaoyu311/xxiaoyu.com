@@ -48,7 +48,7 @@ app.set('port', port);
 
 const server = app.listen(port, err => {
   if (err) {
-    console.log(err);
+    console.log(err); 
   } else {
     console.log(`服务正在${server.address().port}端口启动`);
   }
