@@ -1,10 +1,10 @@
 import express from 'express';
 import path from 'path';
 import async from 'async';
-const router = express.Router();
 import { getConfig } from '../utils/tool';
 import category from '../proxy/category';
 import post from '../proxy/post';
+const router = express.Router();
 
 // 页面重定向
 router.get('/', (req, res, next) => {
@@ -18,6 +18,7 @@ router.get('/blog', (req, res, next) => {
 
 // blog首页
 router.get('/blog/:category', (req, res, next) => {
+
   async.parallel([
     fn => {
       getConfig(path.join(process.cwd(), 'config/settings.json'), (err, settings) => {
@@ -89,8 +90,16 @@ router.get('/blog/:category/:_id', (req, res, next) => {
 
 // 关于页面
 router.get('/about', (req, res, next) => {
-  res.render('blog/about', {
-    query: 'about'
+  getConfig(path.join(process.cwd(), 'config/settings.json'), (err, settings) => {
+    if (err) {
+      console.log('获取配置参数失败', err);
+    } else {
+      res.render('blog/about', {
+        query: 'about',
+        title: settings.SiteName,
+        settings
+      });
+    }
   });
 })
 

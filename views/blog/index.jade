@@ -19,7 +19,7 @@ block content
                     li.cate_item.nav-item.d-flex.align-items-center._nav_item(class='#{currentCate === cate.Alias ? "_nav_item_active" : ""}')
                       a(href='#{currentCate === cate.Alias ? "javascript:;" : cate.Alias}')
                         img._alias_img(src=cate.Img, alt="icon")
-                        span._alias_text
+                        span._alias_text.d-ms-none
                           | #{cate.CateName}
           .col-md-8.col_padding.offset-md-3._me_main
             ._main

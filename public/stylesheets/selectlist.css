@@ -456,3 +456,12 @@
 .dropdown-menu>a:first-child {
   margin-top: .5rem;
 }
+
+@media (max-width: 1200px) {
+  .col-md-2 {
+    width: 70px;
+  } 
+  .offset-md-3 {
+    margin-left: 16.666667%;
+  }
+}
