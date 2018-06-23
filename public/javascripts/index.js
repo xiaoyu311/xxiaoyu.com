@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function() {
   // 阴影
   $('._content_item').on('click', function (event) {
     var currentId = $(event.target).attr('id');
@@ -26,7 +26,6 @@ $(function () {
             if (element) {
               $('.labels').append(element);
               var footerHeight = $('#footer_btn').height();
-              console.log(footerHeight)
               $('#article_content').css('bottom', footerHeight + 20 + 'px');
             }
             $('.mask_content').children('main').append(
