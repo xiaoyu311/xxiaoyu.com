@@ -40,14 +40,23 @@ $(document).ready(function() {
   }
   $('.next_page_text').on('click', function() {
     $(this).css('display', 'none');
-    $('.next_page_container .my_load').css('visibility', 'visible');
+    $('.next_page_container .my_load').css({
+      visibility: 'visible',
+      marginBottom: '20px'
+    });
+    var url = window.location.pathname;
+    const arr = url.split('/');
+    const Alias = arr[arr.length - 1];
     setTimeout(function() {
       $.ajax({
         type: 'GET',
-        url: `/article/all/${page}`,
+        url: `/article/${Alias}/${page}`,
         success: function(res) {
           $('.next_page_text').css('display', 'block');
-          $('.next_page_container .my_load').css('visibility', 'hidden');
+          $('.next_page_container .my_load').css({
+            visibility: 'hidden',
+            marginBottom: '0px'
+          });
           if (res.status) {
             res.ArticleList.forEach(item => {
               $('._main-wrapper .navbar-nav').append(

@@ -84,6 +84,23 @@ li {
   border-radius: 50%;
   background: green;
 }
+.pjax-loader-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  opacity: 0;
+  transition: opacity 0.4s linear 0.4s;
+}
+.pjax-loader-bar .progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: #77b6ff;
+  box-shadow: 0 0 10px rgba(119, 182, 255, 0.7);
+  transition: width 0.4s ease;
+}
 @keyframes firstLoad {
   0% {
     transform: scale(1)
