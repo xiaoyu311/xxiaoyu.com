@@ -4,9 +4,11 @@ import async from 'async';
 
 class Post {
   // 文章查找
-  getAll(Alias, callback) {
+  getAll(Alias, n, callback) {
+    const pageNumber = 1;
+    let number = parseInt(n);
     if (Alias === 'all') {
-      postModel.find({}, (err, postList) => {
+      postModel.find({}).skip(number * pageNumber).limit(pageNumber).exec((err, postList) => {
         if (err) {
           console.log('查询所有文章出错');
           callback(err);
@@ -58,7 +60,7 @@ class Post {
       }
       postModel.find({
         CategoryId: categoryInfo._id
-      }, (err, postList) => {
+      }).skip(number * pageNumber).limit(pageNumber).exec((err, postList) => {
         if (err) {
           console.log('查询对应_id文章出错');
           callback(err);

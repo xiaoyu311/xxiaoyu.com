@@ -96,15 +96,15 @@ li {
   }
 }
 .my_load .first {
-  animation: firstLoad 1.2s infinite linear .2s;
+  animation: firstLoad 1s infinite linear .1s;
 }
 .my_load .second {
   margin-left: 7px;
-  animation: firstLoad 1.2s infinite linear .4s;
+  animation: firstLoad 1s infinite linear .4s;
 }
 .my_load .third {
   margin-left: 7px;
-  animation: firstLoad 1.2s infinite linear .6s;
+  animation: firstLoad 1s infinite linear .7s;
 }
 #home-loading {
   background: #f3f3f3;

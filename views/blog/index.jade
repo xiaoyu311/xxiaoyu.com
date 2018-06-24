@@ -54,7 +54,7 @@ block content
               main._main-wrapper
                 ul.navbar-nav
                   each articleInfo in articleList
-                    li.nav-item._content_item(_id=articleInfo._id, title=articleInfo.Title, Labels=articleInfo.Labels)
+                    li.nav-item._content_item(_id=articleInfo._id, title=articleInfo.Title, Labels=articleInfo.Labels, onclick='$.contentShow(event, this)')
                       div
                         section(style="margin-top: 15px;")
                           h4(style="margin: 0;")
@@ -72,7 +72,7 @@ block content
                                 | 2016-04-04
                           div._alias(style="#{articleInfo.Url ? 'display: block' : 'display: none'}")
                             i.fas.fa-globe
-                            a.target_url(href="#{articleInfo.Url}")
+                            a.target_url(href="#{articleInfo.Url}", id="target_url")
                               | #{articleInfo.Url}
                         section(style="margin-top: 10px;")
                           span._content
@@ -80,6 +80,11 @@ block content
                 .next_page_container 
                   span.next_page_text
                     | 下一页  
+                  .my_load
+                    div
+                      .first
+                      .second
+                      .third
             footer.footer
               p
                 | 2018 © All Rights Reserved | #{settings.RecordNo} | 

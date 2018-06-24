@@ -7,13 +7,28 @@ import post from '../proxy/post';
 const router = express.Router();
 
 // 页面重定向
-router.get('/', (req, res, next) => {
+router.get('/', (req, res, next) => { 
   res.redirect('/blog/all');
 });
 
 // 页面重定向
 router.get('/blog', (req, res, next) => {
   res.redirect('/blog/all');
+});
+
+// 文章分页
+router.get('/article/:category/:n', (req, res) => {
+  // let number = parseInt(req.params.n);
+  post.getAll(req.params.category, req.params.n, (err, ArticleList) => {
+    if (err) {
+      console.log('查询文章分页失败: ', err);
+    } else {
+      res.send({
+        status: true,
+        ArticleList
+      });
+    }
+  });
 });
 
 // blog首页
@@ -40,7 +55,7 @@ router.get('/blog/:category', (req, res, next) => {
       });
     },
     fn => {
-      post.getAll(req.params.category, (err, ArticleList) => {
+      post.getAll(req.params.category, 1, (err, ArticleList) => {
         if (err) {
           fn(err);
         } else {

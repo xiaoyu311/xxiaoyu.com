@@ -476,6 +476,13 @@
   color: #777;
   border-radius: 3px;
 }
+.next_page_container .my_load {
+  visibility: hidden;
+  margin-top: 0px;
+}
+.next_page_container .my_load > div {
+  text-align: center;
+}
 
 @media (max-width: 1200px) {
   .col-md-2 {
