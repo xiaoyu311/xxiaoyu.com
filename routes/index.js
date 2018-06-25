@@ -103,6 +103,21 @@ router.get('/blog/:category/:_id', (req, res, next) => {
   });
 }); 
 
+// 开源页面
+router.get('/source', (req, res, next) => {
+  getConfig(path.join(process.cwd(), 'config/settings.json'), (err, settings) => {
+    if (err) {
+      console.log('获取配置参数失败', err);
+    } else {
+      res.render('blog/source', {
+        query: 'source',
+        title: settings.SiteName,
+        settings
+      });
+    }
+  });
+});
+
 // 关于页面
 router.get('/about', (req, res, next) => {
   getConfig(path.join(process.cwd(), 'config/settings.json'), (err, settings) => {

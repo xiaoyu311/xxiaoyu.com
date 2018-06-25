@@ -13,7 +13,7 @@ html(lang="zh-CN")
     link(href="/stylesheets/home-loading.css", rel="stylesheet")
     title=title
   body.fuelux
-    #home-loading.home-loading(style='display: block;')
+    #home-loading.home-loading(style='display: none;')
       #loading-con.loading-con
         .loading-circle
         img#loadingImg(alt="loading", src=settings.LogoPath)
@@ -37,8 +37,8 @@ html(lang="zh-CN")
                         i.fas.fa-box-open
                           span._margin
                             | #{__("layout.blog")}
-                  li.nav-item
-                   a._nav_link(href="#")
+                  li.nav-item(class='#{query === "source" ? query : ""}')
+                   a._nav_link(href="#{query === 'source' ? 'javascript:;' : '/source'}")
                      span
                        i.fas.fa-book-open
                        span._margin
@@ -63,6 +63,6 @@ html(lang="zh-CN")
                             | #{__("layout.about")}
       block content
     script.
-      $(document).ready(function(){
-        $('#home-loading').css('display', 'none');
-      });
+      //- $(document).ready(function(){
+      //-   $('#home-loading').css('display', 'none');
+      //- });

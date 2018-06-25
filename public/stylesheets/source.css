@@ -1,0 +1,35 @@
+.source_container {
+  background: #f3f3f4;
+}
+._source_row {
+  margin: 0;
+  padding: 0;
+}
+._source_col {
+  width: 360px;
+  height: 500px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+._link_top {
+  height: 360px;
+  border-bottom: 1px solid #ddd;
+}
+._info>h3 {
+  color: #fd7e14;
+  margin: 10px;
+}
+._info>p {
+  color: #20c997;
+  margin-left: 10px;
+}
+._btn_github {
+  margin-right: 20px;
+  margin-top: 12px;
+}
+._link_top>a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
