@@ -1,0 +1,88 @@
+extends ../common/layout.jade
+block content
+  link(rel="stylesheet", href="/stylesheets/book.css")
+  ._book_container.flex-grow-1
+    .book_row.d-flex.justify-content-around
+      .book_item
+        a(href="")
+        img.book_show(src="/images/51QWrj6sodL._AA200_.jpg", alt="")
+        .book_mask
+          h3._green
+            | JavaScript权威指南
+          h4._green
+            | 作者：淘宝前端团队
+          h4._green
+            | 一直在读
+      .book_item
+        a(href="")
+        img.book_show(src="/images/51Baxhgqu5L._AA200_.jpg", alt="")
+        .book_mask
+          h3._light
+            | CSS世界
+          h4._light
+            | 作者：张鑫旭
+          h4._gray_dark
+            | 已读完
+      .book_item
+        a(href="")
+        img.book_show(src="/images/51HJLI2SBXL._AA200_.jpg", alt="")
+        .book_mask
+          h3._light
+            | 深入React技术栈
+          h4._light
+            | 作者：陈屹
+          h4._light
+            | 已读完
+      .book_item
+        a(href="")
+        img.book_show(src="/images/51HZMD2CozL._AA200_.jpg", alt="")
+        .book_mask
+          h3._gray_dark
+            | 高性能网站建设
+          h4._gray_dark
+            | 作者：史蒂夫、 刘彦博
+          h4._gray_dark
+            | 已读完
+    .book_row.d-flex.justify-content-around
+      .book_item
+        a(href="")
+        img.book_show(src="/images/51mFh58OZbL._AA200_.jpg", alt="")
+        .book_mask
+          h3._gray_dark
+            | 深入理解JavaScript
+          h4._gray_dark
+            | 作者：罗彻麦尔、王玉林
+          h4._gray_dark
+            | 已读完
+      .book_item
+        a(href="")
+        img.book_show(src="/images/51T4tGqPRaL._AA200_.jpg", alt="")
+        .book_mask
+          h3._gray_dark
+            | 高性能JavaScript
+          h4._gray_dark
+            | 作者：尼古拉斯.泽卡斯
+          h4._gray_dark
+            | 已读完
+      .book_item
+        a(href="")
+        img.book_show(src="/images/51voLbgpMiL._AA200_.jpg", alt="")
+        .book_mask
+          h3._light
+            | JavaScript高级程序设计
+          h4._light
+            | 作者：泽卡斯
+          h4._light
+            | 已读完
+      .book_item
+        a(href="")
+        img.book_show(src="/images/41my23OKryL._AA200_.jpg", alt="")
+        .book_mask
+          h3._gray_dark
+            | 前端工程化
+          h4._gray_dark
+            | 作者：周俊鹏
+          h4._gray_dark
+            | 已读完
+  script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
+  script(src="/javascripts/book.js")

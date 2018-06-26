@@ -43,7 +43,7 @@ const normalizePort = val => {
   return false;
 }
 
-const port = normalizePort(process.env.PORT || '3001');
+const port = normalizePort(process.env.PORT || '3031');
 app.set('port', port);
 
 const server = app.listen(port, err => {

@@ -118,6 +118,21 @@ router.get('/source', (req, res, next) => {
   });
 });
 
+// 书籍页面
+router.get('/book', (req, res, next) => {
+  getConfig(path.join(process.cwd(), 'config/settings.json'), (err, settings) => {
+    if (err) {
+      console.log('获取配置参数失败', err);
+    } else {
+      res.render('blog/book', {
+        query: 'book',
+        title: settings.SiteName,
+        settings
+      });
+    }
+  });
+});
+
 // 关于页面
 router.get('/about', (req, res, next) => {
   getConfig(path.join(process.cwd(), 'config/settings.json'), (err, settings) => {

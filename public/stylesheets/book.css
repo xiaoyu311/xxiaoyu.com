@@ -1,0 +1,63 @@
+._book_container {
+  background-color: #fff;
+}
+.book_row {
+  padding: 30px;
+}
+.book_item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.book_item>a {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.book_show {
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transition: all .5s;
+}
+.book_mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: rotateY(-180deg);
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all .5s;
+}
+.book_mask>h3 {
+  text-align: center;
+  font-size: 18px;
+}
+.book_mask>h4 {
+  text-align: center;
+  font-size: 16px;
+}
+._gray_dark {
+  color: #343a40;
+}
+._light {
+  color: #fff;
+}
+._green {
+  color: #fd7e14;
+}
+

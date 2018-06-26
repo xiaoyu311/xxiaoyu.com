@@ -43,14 +43,14 @@ html(lang="zh-CN")
                        i.fas.fa-book-open
                        span._margin
                         | #{__("layout.source")}
-                  li.nav-item
-                    a._nav_link(href="#")
+                  li.nav-item(class='#{query === "book" ? query : ""}')
+                    a._nav_link(href="#{query === 'book' ? 'javascript:;' : '/book'}")
                       span
                         i.fas.fa-toolbox
                         span._margin
-                          | #{__("layout.tool")}
+                          | #{__("layout.book")}
                   li.nav-item
-                    a._nav_link(href="#")
+                    a._nav_link(href="#", style='color: #f0f0f0;')
                       span
                         i.fas.fa-comment-dots
                           span._margin
