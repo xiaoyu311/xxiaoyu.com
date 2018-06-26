@@ -22,8 +22,15 @@
     "tests"
   ],
   "dependencies": {
+    "fuelux": "^3.16.7",
+    "animate.css": "^3.5.2",
+    "font-awesome": "^5.0.13",
+    "marked": "^0.4.0",
+    "metisMenu": "^2.7.7",
+    "sweetalert": "^2.1.0",
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
     "malihu-custom-scrollbar-plugin": "^3.1.5"
-  }
+  },
+  "private": true
 }
