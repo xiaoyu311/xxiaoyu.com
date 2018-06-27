@@ -1,5 +1,4 @@
 import i18n from 'i18n';
-console.log(__dirname)
 
 i18n.configure({
   locales: ['zh-CN', 'en-US'],
