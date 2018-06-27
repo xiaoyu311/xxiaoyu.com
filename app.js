@@ -22,7 +22,11 @@ app.use(cookieParser());
 // i18n init parses req for language headers, cookies, etc.
 app.use(i18n.init);
 
-app.use('/static', express.static(path.join(__dirname, '/Public')));
+// console.log(express.static(path.resolve(__dirname, '/Public')))
+
+app.use(express.static(path.join(__dirname, '/Public'), {
+  maxAge: '1d'
+}));
 
 app.use('/', route);
 app.use('/admin', admin);
