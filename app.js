@@ -22,7 +22,7 @@ app.use(cookieParser());
 // i18n init parses req for language headers, cookies, etc.
 app.use(i18n.init);
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/Public')));
 
 app.use('/', route);
 app.use('/admin', admin);
