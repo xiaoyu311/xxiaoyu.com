@@ -1,11 +1,11 @@
 extends ../common/layout.jade
 block content
-  link(rel="stylesheet", href="/public/stylesheets/about.css")
+  link(rel="stylesheet", href="/stylesheets/about.css")
   .content(style='display: flex; flex-direction: column;flex-grow: 1;background: #eee;position: relative;')
     main#information
       section.show_me
         .blog_img
-          img(src="/public/images/blog.jpeg", alt="blog")
+          img(src="/images/blog.jpeg", alt="blog")
         ul
           li
             span.span_first
@@ -35,6 +35,6 @@ block content
               | 对接后台php
       section.content_me(style="margin-top: 30px;")
         div#mark_dowm
-  script(type='text/javascript', src='/public/libs/jquery/dist/jquery.min.js', charset='utf-8')
-  script(type='text/javascript', src='/public/libs/marked/marked.min.js', charset='utf-8')
-  script(type='text/javascript', src="/public/javascripts/about.js", charset='utf-8')
+  script(type='text/javascript', src='/libs/jquery/dist/jquery.min.js', charset='utf-8')
+  script(type='text/javascript', src='/libs/marked/marked.min.js', charset='utf-8')
+  script(type='text/javascript', src="/javascripts/about.js", charset='utf-8')
