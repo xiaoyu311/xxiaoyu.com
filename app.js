@@ -24,7 +24,7 @@ app.use(i18n.init);
 
 // console.log(express.static(path.resolve(__dirname, '/Public')))
 
-app.use(express.static(path.join(__dirname, '/Public'), {
+app.use(express.static(path.join(__dirname, '/public'), {
   maxAge: '1d'
 }));
 
