@@ -21,9 +21,8 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 // i18n init parses req for language headers, cookies, etc.
 app.use(i18n.init);
-console.log(path.join(__dirname, '/public'))
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', route);
 app.use('/admin', admin);
