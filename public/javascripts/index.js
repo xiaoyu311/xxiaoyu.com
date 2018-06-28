@@ -1,5 +1,24 @@
 $(document).ready(function() {
   var page = 1;
+  var nextPageShow = function(page) {
+    var articleCount = parseInt($('#count').attr('count'));
+    var isTrue = articleCount / (page * 5);
+    console.log(isTrue)
+    if (isTrue > 1) {
+      return true;
+    }
+    return false;
+  }
+  var nextPage = function(page) {
+    if (nextPageShow(page)) {
+      $('.next_page_text').css('display', 'inline-block');
+      $('.not_next_page').css('display', 'none');
+    } else {
+      $('.not_next_page').css('display', 'inline-block');
+      $('.next_page_text').css('display', 'none');
+    }
+  }
+  nextPage(page);
   $.contentShow = function(event, that) {
     var currentId = $(event.target).attr('id');
     var _id = $(that).attr('_id');
@@ -92,6 +111,7 @@ $(document).ready(function() {
                 </li>`
               );
               page += 1;
+              nextPage(page);
             });
           }
         }

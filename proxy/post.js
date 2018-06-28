@@ -2,10 +2,10 @@ import postModel from '../models/post';
 import CategoryModel from '../models/category';
 import async from 'async';
 
+const pageNumber = 1;
 class Post {
   // 文章查找
   getAll(Alias, n, callback) {
-    const pageNumber = 1;
     let number = parseInt(n);
     if (Alias === 'all') {
       postModel.find({}).skip(number * pageNumber).limit(pageNumber).exec((err, postList) => {
@@ -87,6 +87,38 @@ class Post {
         callback(null, newPostList);
       });
     });
+  }
+
+  // 文章总数量
+  getCount(Alias, callback) {
+    if (Alias == 'all') {
+      postModel.count({}, (err, count) => {
+        if (err) {
+          console.log('查询对应分类id出错');
+          callback(err);
+          return
+        }
+        callback(null, count);
+      });
+      return;
+    }
+    CategoryModel.findOne({
+      Alias
+    }, (err, categoryInfo) => {
+      if (err) {
+        console.log('查询对应分类id出错');
+        callback(err);
+        return
+      }
+      postModel.count({ CategoryId: categoryInfo._id }, (err, count) => {
+        if (err) {
+          console.log('数量查询失败');
+          callback(err);
+          return;
+        }
+        callback(null, count);
+      });
+    })
   }
 
   // 文章保存

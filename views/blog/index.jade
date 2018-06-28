@@ -1,7 +1,7 @@
 extends ../common/layout.jade
 block content
   link(href='/stylesheets/index.css', rel='stylesheet')
-  div(style='flex-grow: 1;background: #f3f3f4;')
+  div#count(style='flex-grow: 1;background: #f3f3f4;', count=count)
     ._github
       a(href="https://github.com/xiaoyu311")
         img(src="/images/github.png", alt="github")
@@ -80,6 +80,8 @@ block content
                 .next_page_container 
                   span.next_page_text
                     | 下一页  
+                  span.not_next_page
+                    | 无更多数据
                   .my_load
                     div
                       .first

@@ -55,18 +55,28 @@ router.get('/blog/:category', (req, res, next) => {
       });
     },
     fn => {
-      post.getAll(req.params.category, 1, (err, ArticleList) => {
+      post.getAll(req.params.category, 0, (err, ArticleList) => {
         if (err) {
           fn(err);
         } else {
           fn(null, ArticleList);
         }
       });
+    },
+    fn => {
+      post.getCount(req.params.category, (err, count) => {
+        if (err) {
+          fn(err);
+        } else {
+          fn(null, count);
+        }
+      });
     }
   ], (err, result) => {
-    let settings;
+    let settings; 
     let categories;
     let articleList;
+    let count;
     if (err) {
       next(err);
       return;
@@ -74,6 +84,7 @@ router.get('/blog/:category', (req, res, next) => {
     settings = result[0];
     categories = result[1];
     articleList = result[2];
+    count = result[3];
     res.render('blog/index', {
       title: settings.SiteName,
       settings,
@@ -81,6 +92,7 @@ router.get('/blog/:category', (req, res, next) => {
       cateData: categories,
       query: 'blog',
       currentCate: req.params.category,
+      count
     });
   });
 });
